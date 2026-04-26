@@ -1,0 +1,41 @@
+theme: hugo-knowledge-graph
+baseURL: https://example.com
+defaultContentLanguage: en
+disableKinds: ['404', 'robotstxt', 'rss', 'sitemap']
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    renderHooks:
+      link:
+        # IMPORTANT: enable Hugo embedded link resolution
+        useEmbedded: always
+
+# IMPORTANT: enable backlinks and knowledge-graph JSON generation
+outputs:
+  home:
+    - html
+    - backlinks
+    - knowledge-graph
+
+taxonomies:
+  tag: tags
+
+module:
+  mounts:
+    - disableWatch: false
+      source: assets
+      target: assets
+    - disableWatch: false
+      source: ../assets
+      target: assets
+    - disableWatch: false
+      source: layouts
+      target: layouts
+    - disableWatch: false
+      source: ../layouts
+      target: layouts
+    - disableWatch: false
+      source: ../i18n
+      target: i18n

@@ -1,0 +1,13 @@
+# 1. Full Graph Mode
+full:
+  chargeStrength: -1500 # D3 many-body force strength (negative = repulsion) https://d3js.org/d3-force/many-body#manyBody_strength
+  linkDistance: 450 # Ideal distance between linked nodes https://d3js.org/d3-force/link#link_distance
+  graphZoomInit: 0.05 # Initial zoom level when the canvas loads
+
+
+# 2. Widget / Local Graph Mode
+widget:
+  chargeStrength: -3000
+  graphZoomInit: 0.8
+  showTags: true
+  tagMinCount: 0

@@ -1,0 +1,8 @@
+# Override only the keys you want to change.
+# Nested dicts are deep merged with theme defaults.
+#
+# Example:
+# full:
+#   labelOffsetPx: 200
+# widget:
+#   labelOffsetPx: 100

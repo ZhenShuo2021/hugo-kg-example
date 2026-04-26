@@ -1,0 +1,6 @@
+module:
+  mounts:
+    - source: content-samples/docs-docker
+      target: content
+    - source: data/docker.yaml
+      target: data/knowledgeGraph.yaml

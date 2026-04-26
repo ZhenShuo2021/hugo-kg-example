@@ -1,0 +1,70 @@
+<!doctype html>
+<html
+	lang="{{ site.Language.LanguageCode }}"
+	dir="{{ or site.Language.LanguageDirection `ltr` }}"
+	data-theme="light">
+	<head>
+		{{ with resources.Get "/css/reset.css" }}
+			<link
+				rel="stylesheet"
+				href="{{ .RelPermalink }}"
+				integrity="{{ .Data.Integrity }}"
+				crossorigin="anonymous">
+		{{ end }}
+		<script>
+			(() => {
+				const savedTheme = localStorage.getItem('theme') || 'light';
+				document.documentElement.setAttribute('data-theme', savedTheme);
+
+				const toggleDarkMode = () => {
+					const html = document.documentElement;
+					const currentTheme = html.getAttribute('data-theme');
+					const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+					html.setAttribute('data-theme', newTheme);
+					localStorage.setItem('theme', newTheme);
+					document.querySelector('.theme-toggle').textContent =
+						newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+				};
+
+				document.addEventListener('DOMContentLoaded', () => {
+					const toggleButton = document.querySelector('.theme-toggle');
+					toggleButton.textContent =
+						document.documentElement.getAttribute('data-theme') === 'dark' ? 'Light Mode' : 'Dark Mode';
+					toggleButton.addEventListener('click', toggleDarkMode);
+				});
+			})();
+		</script>
+		<style>
+			body {
+				width: 100%;
+				margin-inline: auto;
+				padding-inline: clamp(1rem, 5vw, 2rem);
+				padding-block: clamp(1.5rem, 4vw, 3rem);
+			}
+			html[data-theme='light'] body {
+				background-color: #ffffff;
+				color: #000000;
+			}
+			html[data-theme='dark'] body {
+				background-color: #1a1a1a;
+				color: #e0e0e0;
+			}
+			.theme-toggle {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+				user-select: none;
+				z-index: 9999;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="theme-toggle">Dark Mode</div>
+		<h1>{{ .Title }}</h1>
+		<a style="display: block; margin-bottom: 60px;" href="{{ site.Home.RelPermalink }}">Home</a>
+		<main>
+			{{ block "main" . }}{{ end }}
+		</main>
+	</body>
+</html>
