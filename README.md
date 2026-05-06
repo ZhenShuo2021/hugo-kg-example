@@ -4,23 +4,7 @@ This repository contains example sites for [Hugo Knowledge Graph](https://github
 
 ## Quick Start
 
-```sh
-git clone https://github.com/ZhenShuo2021/hugo-kg-example
-cd hugo-kg-example
-hugo server -e NAME
-```
-
-Replace `NAME` with one of the following environment names:
-
-| Name | Source | Description |
-|------|--------|-------------|
-| `docker` | [Docker Docs](https://github.com/docker/docs) | Large-scale technical documentation with a high node count |
-| `blog` | [blog.maximeheckel.com](https://github.com/MaximeHeckel/blog.maximeheckel.com/) | Personal blog with a natural link structure |
-| `yore` | [Hugo theme Yore docs](https://github.com/ZhenShuo2021/hugo-yore) | Small-scale documentation example |
-
-## Try with Your Site
-
-Move the `content` directory from your site to this repo and run `hugo sever`.
+See [development](https://github.com/ZhenShuo2021/hugo-knowledge-graph#development)
 
 ## License
 

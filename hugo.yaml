@@ -21,21 +21,3 @@ outputs:
 
 taxonomies:
   tag: tags
-
-module:
-  mounts:
-    - disableWatch: false
-      source: assets
-      target: assets
-    - disableWatch: false
-      source: ../assets
-      target: assets
-    - disableWatch: false
-      source: layouts
-      target: layouts
-    - disableWatch: false
-      source: ../layouts
-      target: layouts
-    - disableWatch: false
-      source: ../i18n
-      target: i18n
